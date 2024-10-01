@@ -1,0 +1,104 @@
+.ingreso .background-image {
+  background-image: url("../assets/Fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.contenedor {
+  margin: 130px 0 100px;
+  background-color: var(--blanco);
+  border-radius: 1em;
+  padding: 3em 3em;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+  width: 370px;
+  height: auto;
+}
+.contenedor form {
+  margin: 30px 0px 0px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenedor .titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ingreso h1 {
+  color: var(--rosa);
+  font-size: 40px;
+  margin: 0;
+}
+.ingreso .titulo p {
+  font-size: 50px;
+  margin: -20px -5px 0 10px;
+}
+#R {
+  font-size: 60px;
+  margin: -31px -5px 0 10px;
+}
+
+.contenedor p {
+  text-align: center;
+  margin-left: 3px;
+}
+
+.ingreso label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contenedor form p {
+  text-align: left;
+  margin: 0 3px 3px;
+  color: var(--rosa);
+}
+
+.ingreso .textbox {
+  width: 100%;
+}
+
+.ingreso .MensajeError {
+  margin: 0px;
+}
+
+.contenedor form .MainButton {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .ingreso h1 {
+    font-size: 30px;
+  }
+  .ingreso .titulo p {
+    font-size: 40px;
+  }
+  .contenedor {
+    font-size: 12px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .contenedor {
+    box-shadow: none;
+  }
+  .ingreso .background-image {
+    background-color: var(--blanco);
+    background-image: none;
+  }
+}

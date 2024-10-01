@@ -1,0 +1,121 @@
+.footer {
+  background-color: var(--footer);
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  width: 100%;
+  align-items: baseline;
+  justify-content: center;
+}
+.contactInfo {
+  max-width: 300px;
+}
+.contact .par {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contact h3 {
+  color: var(--blanco);
+  letter-spacing: 4px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+.itemEmpleo h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.itemEmpleo a {
+  color: var(--gris-claro);
+  text-align: left;
+  text-decoration: underline;
+  font-weight: normal;
+}
+.contact .item {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 5px;
+}
+.contact .item p {
+  color: var(--gris-claro);
+  text-align: left;
+}
+.contact .item img {
+  height: 20px;
+  width: auto;
+}
+.footer .temp {
+  height: 250px;
+  width: fit-content;
+}
+.archivo {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 10px;
+}
+.archivo input {
+  background-color: var(--gris);
+  border-color: var(--gris-claro);
+  border-style: solid;
+  color: var(--blanco);
+  border-width: 2px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.archivo .submit {
+  background-color: var(--gris);
+  border-color: var(--gris-claro);
+  border-style: solid;
+  color: var(--blanco);
+  width: 50%;
+}
+.archivo .submit:hover {
+  background-color: var(--gris-claro);
+  border-color: var(--gris-claro);
+  border-style: solid;
+  color: var(--negro);
+}
+
+#map {
+  display: flex;
+  width: 350px;
+  max-width: 200px;
+  aspect-ratio: 1;
+  border: 2px solid #f7f7f7;
+  border-radius: 18px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 760px) {
+  #map {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .footer {
+    display: grid;
+    gap: 20px;
+  }
+  .footer .itemEmpleo a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .contact h3 {
+    font-size: 15px;
+  }
+  .contact p {
+    font-size: 13px;
+  }
+}

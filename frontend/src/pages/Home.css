@@ -1,0 +1,260 @@
+.Home-page .background-image {
+  background-image: url("../assets/Fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.first-content {
+  margin-top: 80px;
+  align-content: center;
+  width: 90%;
+}
+.first {
+  position: relative; /* Necesario para que el pseudo-elemento esté posicionado correctamente */
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-image: url("src/assets/Fondo1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 700px;
+  z-index: 1; /* Asegura que el contenido esté encima del pseudo-elemento */
+}
+
+.first::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.637); /* Color negro semitransparente */
+  z-index: -1; /* Coloca el pseudo-elemento detrás del contenido de .first */
+}
+
+.first .text {
+  text-align: center;
+}
+.first h2,
+.first h1 {
+  color: var(--blanco);
+  margin: 10px 0px 0px;
+}
+.first h1 {
+  font-size: 50px;
+}
+.first .titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+.first .MarcaName {
+  margin-top: 10px;
+  font-size: 80px;
+}
+
+.first .buttonsFirst {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+.first .buttonsFirst button {
+  width: 150px;
+  padding: 15px 5px;
+  font-size: 15px;
+}
+.first .buttonsFirst a {
+  align-content: center;
+  width: 140px;
+  text-align: center;
+  padding: 15px 5px;
+  font-size: 15px;
+}
+
+.about {
+  padding: 100px 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.about img {
+  margin-left: -15%;
+  object-fit: cover;
+  height: 500px;
+  width: 400px;
+}
+.about .text {
+  margin: auto -60px;
+  display: block;
+  padding: 30px 30px 40px;
+  background-color: var(--blanco);
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: auto;
+  width: 35%;
+}
+.about .text p {
+  text-align: justify;
+  margin: 0 20px 40px;
+}
+.about .text h4 {
+  margin: 20px 0 0;
+  color: var(--gris);
+  padding: 0 20px;
+  letter-spacing: 4px;
+}
+.about .text h1 {
+  margin-bottom: 20px;
+}
+.about .SecondButton {
+  margin: 0px 0px 20px 20px;
+}
+.about .SecondButton:hover {
+  padding: 12px;
+  margin-left: 18px;
+}
+
+.top {
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  padding: 30px 20px 10px;
+  background-color: var(--contenedor);
+}
+.top .container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 3%;
+}
+.top .tituloh2 {
+  color: var(--rosa);
+  margin: 5px 15px 40px;
+  font-size: 30px;
+}
+.top .tituloh1 {
+  margin: 20px 0 0;
+  color: var(--gris);
+  padding: 0 20px;
+  letter-spacing: 4px;
+}
+.top .button .MainButton {
+  display: flex;
+  width: 90px;
+  margin: 25px auto;
+}
+
+.comments-section {
+  margin: 30px 5% 150px;
+  padding-top: 80px;
+}
+.comments-section hr {
+  color: var(--rosa);
+  border-style: solid;
+  margin: 30px auto;
+  width: 60%;
+}
+.comments-container {
+  margin: auto;
+  background-color: var(--blanco);
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 3px 3px 20px 1px rgba(0, 0, 0, 0.1);
+  max-width: 70%;
+}
+
+@media screen and (max-width: 760px) {
+  .about .text p {
+    margin: 0 20px 40px;
+    font-size: 13px;
+  }
+  .about .text h1 {
+    font-size: 30px;
+  }
+  #map {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 620px) {
+  .about .text p {
+    margin: 0 5px 40px;
+    font-size: 13px;
+  }
+  .about .text h1 {
+    font-size: 29px;
+  }
+  .about .text {
+    padding: 20px 15px 40px;
+    margin: 30px;
+    position: absolute;
+    width: 250px;
+  }
+  .about img {
+    margin-left: 0;
+    position: static;
+    object-fit: contain;
+  }
+  .top .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 15px;
+  }
+  .top h4,
+  .about h4 {
+    padding: 0px 13px 5px;
+    font-size: 13px;
+  }
+  .footer {
+    display: grid;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .first h2 {
+    font-size: 18px;
+  }
+  .first h1 {
+    font-size: 25px;
+  }
+  .first .MarcaName {
+    margin-top: 8px;
+    font-size: 50px;
+  }
+  .first .buttonsFirst button {
+    width: 130px;
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+  .top .container {
+    gap: 15px 8px;
+  }
+  .top h4 {
+    padding: 5px 13px 0;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .first .SecondButton,
+  .first .MainButton {
+    width: 100px;
+    padding: 10px 0;
+    font-size: 13px;
+  }
+  .contact h3 {
+    font-size: 15px;
+  }
+  .contact p {
+    font-size: 13px;
+  }
+}

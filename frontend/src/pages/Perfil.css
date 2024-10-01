@@ -1,0 +1,122 @@
+.perfil-page .background-image {
+  background-image: url("../assets/Fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 80vw;
+  padding: 50px 40px 40px;
+  margin: 130px 0 100px;
+  background-color: var(--contenedor);
+  border-radius: 30px;
+}
+.perfil-container .titulo h1 {
+  letter-spacing: 5px;
+}
+
+.perfil-container hr {
+  color: var(--rosa);
+  border-style: solid;
+  margin: 20px 0 0;
+}
+
+.perfil-container .section-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+}
+
+.perfil-section h3 {
+  font-size: 23px;
+  color: var(--gris);
+  letter-spacing: 1px;
+  margin-top: 2em;
+}
+.perfil-container .perfil-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.tarjetaPerfil {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: auto;
+  min-height: 300px;
+  max-width: 600px;
+  padding: 20px 40px 20px;
+  align-items: center;
+  text-align: center;
+  background-color: var(--blanco);
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.05);
+}
+.tarjetaPerfil h2 {
+  margin: 5px 0 0px;
+  color: var(--rosa);
+  font-size: 27px;
+}
+.tarjetaPerfil p {
+  margin: 5px 0px 0px;
+  font-size: 12px;
+  color: var(--gris);
+}
+.tarjetaPerfil img {
+  border-radius: 50%;
+  margin: 10px 0;
+  max-width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px;
+  border-color: var(--rosa-fuerte);
+  border-style: solid;
+  margin-top: 15px;
+}
+.tarjetaPerfil .button {
+  margin: 10px 0 20px;
+}
+.tarjetaPerfil form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarjetaPerfil form .par {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+  gap: 10px;
+}
+.tarjetaPerfil form .par input {
+  width: 200px;
+}
+.tarjetaPerfil form .MensajeError {
+  color: var(--rojo);
+  margin: 10px 0 10px;
+}
+.tarjetaPerfil form .MainButton {
+  width: 160px;
+  margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .perfil-container {
+    margin: 0px 0;
+    border-radius: 0px;
+    padding-top: 80px;
+  }
+}
