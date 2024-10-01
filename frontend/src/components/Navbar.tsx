@@ -9,7 +9,7 @@ function Navbar() {
     <header>
       <div className="marca">
         <Link to="/">
-          <img src="src/assets/logo.png" alt="Logo" />
+          <img src="../assets/logo.png" alt="Logo" />
         </Link>
         <Link to="/">
           <p className="MarcaName">Sentirse bien</p>
