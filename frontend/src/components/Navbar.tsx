@@ -60,3 +60,4 @@ export default function NavBar({ IsOpen }: Props) {
     </>
   );
 }
+
