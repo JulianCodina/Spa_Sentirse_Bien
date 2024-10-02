@@ -35,7 +35,8 @@
   font-weight: normal;
 }
 .tarjeta img {
-  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
   width: 100%;
   object-fit: cover; /* La imagen llena el contenedor */
 }
@@ -59,7 +60,8 @@
     font-size: 13px;
   }
   .tarjeta img {
-    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
   }
 }
 @media screen and (max-width: 460px) {
@@ -75,7 +77,8 @@
     font-size: 13px;
   }
   .tarjeta img {
-    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
   }
 }
 @media screen and (max-width: 385px) {

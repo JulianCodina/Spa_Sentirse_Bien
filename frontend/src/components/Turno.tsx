@@ -45,7 +45,7 @@ export function TurnPopUp() {
         <div className="turno-component-content">
           <form>
             <div className="icon">
-              <img src="./src/assets/calendario.png" />
+              <img src="../assets/calendario.png" />
               <h1>AGENDÁ TU TURNO</h1>
             </div>
             <p>Completa el siguiente formulario para reservar tu turno.</p>

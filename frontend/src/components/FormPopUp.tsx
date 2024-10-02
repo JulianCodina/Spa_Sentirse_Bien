@@ -68,7 +68,7 @@ export function FormPopUp() {
       <div className="popup-overlay">
         <div className="form-component-content">
           <div className="icon">
-            <img src="./src/assets/gmail2.png" alt="Gmail icon" />
+            <img src="../assets/gmail2.png" alt="Gmail icon" />
             <h1>ENVIANOS UN CORREO</h1>
           </div>
           <p>Completa el siguiente formulario para enviarnos tu consulta</p>
