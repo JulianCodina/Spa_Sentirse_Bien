@@ -15,7 +15,7 @@ export default function Servicio(props: Props) {
   return (
     <div className="tarjeta" onClick={() => openPopUp("turn")}>
       <img src={img} />
-      <div>
+      <div className="info">
         <h4 className="titulo">{titulo}</h4>
         <p>{texto}</p>
         <h4 className="SecondButton">${precio}</h4>
