@@ -56,7 +56,7 @@ export default function Footer() {
             <h3>CONTÁCTANOS</h3>
             <div className="item">
               <img src="../assets/ubicacion.png" alt="Ubicacion" />
-              <p>ANJ, Saavedra 449, H3500 Resistencia, Provincia del Chaco</p>
+              <p>C. French 414, H3506 Resistencia, Chaco</p>
             </div>
             <div className="item">
               <img src="../assets/gmail.png" alt="Gmail" />

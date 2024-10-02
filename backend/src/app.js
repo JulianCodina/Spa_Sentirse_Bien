@@ -5,7 +5,7 @@ import morgan from 'morgan'
 const app = express()
 
 app.use(cors({
-    origin: '*', // Permitir todas las solicitudes (para pruebas)
+    origin: 'https://spa-sentirse-bien.netlify.app/', 
     credentials: true,
 }))
 
