@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { usePopUp } from "../components/PopUpContext";
 import "./FormPopUp.css";
 import emailjs from "@emailjs/browser";
+import swal from "sweetalert";
 
 export function FormPopUp() {
   // Estado inicial para el formulario
@@ -41,7 +42,7 @@ export function FormPopUp() {
           setContact(frmContact);
 
           // Mostrar alerta de éxito
-          alert("Correo enviado exitosamente.");
+          Alerta();
         },
         (err) => {
           console.log("Error", err);
@@ -62,6 +63,10 @@ export function FormPopUp() {
 
   // Si el popup no está activo, no renderiza el formulario
   if (activePopUp !== "form") return null;
+
+  function Alerta() {
+    swal("Consulta enviada", "", "success");
+  }
 
   return (
     <div className="form-component">

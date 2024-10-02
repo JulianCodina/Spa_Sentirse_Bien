@@ -70,7 +70,7 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 73px;
   max-height: 200px;
 }
 .form-component .buttons {
