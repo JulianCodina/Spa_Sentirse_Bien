@@ -21,13 +21,13 @@ function Header({ SetIsOpen, IsOpen }: Props) {
             <img
               onClick={() => SetIsOpen(!IsOpen)}
               className="options"
-              src="src/assets/barra-lateral.png"
+              src="../assets/barra-lateral.png"
               alt="NavBar"
             />
           </>
         )}
         <Link to="/">
-          <img className="logo" src="src/assets/logo.png" alt="Logo" />
+          <img className="logo" src="../assets/logo.png" alt="Logo" />
         </Link>
         <Link to="/">
           <p className="MarcaName">Sentirse bien</p>

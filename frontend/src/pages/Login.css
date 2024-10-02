@@ -13,7 +13,7 @@
   z-index: -1;
 }
 
-.contenedor {
+.ingreso .contenedor {
   margin: 130px 0 100px;
   background-color: var(--blanco);
   border-radius: 1em;
@@ -24,7 +24,7 @@
   width: 370px;
   height: auto;
 }
-.contenedor form {
+.ingreso .contenedor form {
   margin: 30px 0px 0px;
   gap: 20px;
   display: flex;
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 
-.contenedor .titulo {
+.ingreso .contenedor .titulo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@
   margin: 0px;
 }
 
-.contenedor form .MainButton {
+.ingreso .contenedor form .MainButton {
   width: 80%;
   margin: auto;
 }
@@ -88,13 +88,13 @@
   .ingreso .titulo p {
     font-size: 40px;
   }
-  .contenedor {
+  .ingreso .contenedor {
     font-size: 12px;
     width: 300px;
   }
 }
 @media screen and (max-width: 450px) {
-  .contenedor {
+  .ingreso .contenedor {
     box-shadow: none;
   }
   .ingreso .background-image {
