@@ -11,7 +11,7 @@ import Admin from "./pages/Admin";
 import Footer from "./components/footer";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import ProtectedRoute from "./ProtectedRoutes.tsx";
-import NavBar from "./components/NavBar.tsx";
+import NavBar from "./components/Navbar.tsx";
 import { useState } from "react";
 import Clientes from "./pages/Clientes.tsx";
 
