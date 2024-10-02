@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./Nav_Bar.css";
 import { useEffect } from "react";
 
 type Props = {
@@ -59,5 +59,6 @@ export default function NavBar({ IsOpen }: Props) {
       )}
     </>
   );
+
 }
 
