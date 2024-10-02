@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  background-image: url("../assets/Fondo1.jpg");
+  background-image: url("src/assets/Fondo1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,17 +69,13 @@
   justify-content: center;
   gap: 10%;
 }
-.first .buttonsFirst button {
+.first .buttonsFirst button,
+.first .buttonsFirst a {
   width: 150px;
   padding: 15px 5px;
   font-size: 15px;
-}
-.first .buttonsFirst a {
   align-content: center;
-  width: 140px;
   text-align: center;
-  padding: 15px 5px;
-  font-size: 15px;
 }
 
 .about {
@@ -231,7 +227,8 @@
     margin-top: 8px;
     font-size: 50px;
   }
-  .first .buttonsFirst button {
+  .first .buttonsFirst button,
+  .first .buttonsFirst a {
     width: 130px;
     padding: 10px 5px;
     font-size: 12px;
@@ -245,8 +242,8 @@
   }
 }
 @media screen and (max-width: 330px) {
-  .first .SecondButton,
-  .first .MainButton {
+  .first .buttonsFirst button,
+  .first .buttonsFirst a {
     width: 100px;
     padding: 10px 0;
     font-size: 13px;

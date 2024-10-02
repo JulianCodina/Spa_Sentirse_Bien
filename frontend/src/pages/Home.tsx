@@ -53,7 +53,7 @@ function Home() {
           <FormPopUp />
         </section>
         <section className="about">
-          <img src="../assets/imagen1.jpg" alt="imagen1" />
+          <img src="/src/assets/imagen1.jpg" alt="imagen1" />
           <div className="text">
             <h4>NOSOTROS</h4>
             <h1>¿Qué buscamos?</h1>
@@ -74,19 +74,19 @@ function Home() {
           <h2 className="tituloh2">Los Servicios Más Populares</h2>
           <div className="container">
             <Servicio
-              img="../assets/masaje-antiestres.jpg"
+              img="src/assets/masaje-antiestres.jpg"
               titulo="Masajes Antiestrés"
               texto="Relaja cuerpo y mente, aliviando tensión muscular y estrés."
               precio={5000}
             />
             <Servicio
-              img="../assets/Limpieza.jpg"
+              img="src/assets/Limpieza.jpg"
               titulo="Limpieza profunda + Hidratación"
               texto="Limpia y rehidrata la piel, dejándola fresca y luminosa."
               precio={5000}
             />
             <Servicio
-              img="../assets/Velaslim.jpg"
+              img="src/assets/Velaslim.jpg"
               titulo="VelaSlim"
               texto="Eliminación de la grasa en zonas como abdomen, cintura,
                   muslos, brazos y glúteos."
