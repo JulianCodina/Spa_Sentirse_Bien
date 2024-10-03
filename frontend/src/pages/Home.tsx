@@ -6,6 +6,7 @@ import { useLayoutEffect } from "react";
 import { TurnPopUp } from "../components/Turno";
 import { FormPopUp } from "../components/FormPopUp";
 import { usePopUp } from "../components/PopUpContext";
+import LoginModal from "../components/LoginModal";
 
 function Home() {
   useLayoutEffect(() => {
@@ -16,6 +17,7 @@ function Home() {
 
   // Simulando que el usuario es admin
   const isAdmin = true; // Cambia esto a false para simular que el usuario no es admin
+  const isLoggedIn = false; // Cambia esto a true para simular que el usuario está logueado
 
   return (
     <div className="Home-page">
@@ -31,7 +33,10 @@ function Home() {
               </h1>
             </div>
             <div className="buttonsFirst">
-              <button className="MainButton" onClick={() => openPopUp("turn")}>
+              <button
+                className="MainButton"
+                onClick={() => (isLoggedIn ? openPopUp("turn") : LoginModal())}
+              >
                 Agendar Turno
               </button>
               <button
@@ -50,10 +55,10 @@ function Home() {
             </div>
           </div>
           <TurnPopUp />
-          <FormPopUp />
+          <FormPopUp tipo={1} />
         </section>
         <section className="about">
-          <img src="/src/assets/imagen1.jpg" alt="imagen1" />
+          <img src="../assets/imagen1.jpg" alt="imagen1" />
           <div className="text">
             <h4>NOSOTROS</h4>
             <h1>¿Qué buscamos?</h1>
@@ -74,19 +79,19 @@ function Home() {
           <h2 className="tituloh2">Los Servicios Más Populares</h2>
           <div className="container">
             <Servicio
-              img="src/assets/masaje-antiestres.jpg"
+              img="../assets/masaje-antiestres.jpg"
               titulo="Masajes Antiestrés"
               texto="Relaja cuerpo y mente, aliviando tensión muscular y estrés."
               precio={5000}
             />
             <Servicio
-              img="src/assets/Limpieza.jpg"
+              img="../assets/Limpieza.jpg"
               titulo="Limpieza profunda + Hidratación"
               texto="Limpia y rehidrata la piel, dejándola fresca y luminosa."
               precio={5000}
             />
             <Servicio
-              img="src/assets/Velaslim.jpg"
+              img="../assets/Velaslim.jpg"
               titulo="VelaSlim"
               texto="Eliminación de la grasa en zonas como abdomen, cintura,
                   muslos, brazos y glúteos."

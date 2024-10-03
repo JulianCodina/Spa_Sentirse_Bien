@@ -11,27 +11,27 @@ type TarjetaProps = {
 };
 const masajes: TarjetaProps[] = [
   {
-    img: "src/assets/masaje-antiestres.jpg",
+    img: "../assets/masaje-antiestres.jpg",
     titulo: "Antiestrés",
     texto: "Relaja cuerpo y mente, aliviando tensión muscular y estrés.",
     precio: 5000,
   },
   {
-    img: "src/assets/masaje-descontractura.jpg",
+    img: "../assets/masaje-descontractura.jpg",
     titulo: "Descontracturantes",
     texto:
       "Alivia dolores musculares profundos, devolviendo flexibilidad al cuerpo.",
     precio: 5000,
   },
   {
-    img: "src/assets/masaje-piedras.jpeg",
+    img: "../assets/masaje-piedras.jpeg",
     titulo: "Con piedras calientes",
     texto:
       "Combina el calor de piedras volcánicas con masajes para una relajación profunda.",
     precio: 5000,
   },
   {
-    img: "src/assets/masaje-circulatorio.jpg",
+    img: "../assets/masaje-circulatorio.jpg",
     titulo: "Circulatorios",
     texto:
       "Estimula la circulación sanguínea, mejorando la oxigenación de tejidos.",
@@ -40,21 +40,21 @@ const masajes: TarjetaProps[] = [
 ];
 const belleza: TarjetaProps[] = [
   {
-    img: "src/assets/lifting-pestanas.jpg",
+    img: "../assets/lifting-pestanas.jpg",
     titulo: "Lifting de pestaña",
     texto:
       "Eleva y realza tus pestañas de forma natural, con resultados duraderos.",
     precio: 5000,
   },
   {
-    img: "src/assets/depilacion-facial.jpg",
+    img: "../assets/depilacion-facial.jpg",
     titulo: "Depilación facial",
     texto:
       "Elimina vellos no deseados con precisión, dejando tu piel suave y lisa.",
     precio: 5000,
   },
   {
-    img: "src/assets/manos-y-pies.jpeg",
+    img: "../assets/manos-y-pies.jpeg",
     titulo: "Manos y pies",
     texto:
       "Cuida y embellece tus manos y pies con nuestros tratamientos especializados.",
@@ -63,20 +63,20 @@ const belleza: TarjetaProps[] = [
 ];
 const trataFa: TarjetaProps[] = [
   {
-    img: "src/assets/punta-diamante.jpg",
+    img: "../assets/punta-diamante.jpg",
     titulo: "Punta de Diamante",
     texto:
       "Microexfoliación que renueva la piel, dándole un aspecto más joven y luminoso.",
     precio: 5000,
   },
   {
-    img: "src/assets/Limpieza.jpg",
+    img: "../assets/Limpieza.jpg",
     titulo: "Limpieza profunda + Hidratación",
     texto: "Limpia y rehidrata la piel, dejándola fresca y luminosa.",
     precio: 5000,
   },
   {
-    img: "src/assets/crio-frecuencia.jpg",
+    img: "../assets/crio-frecuencia.jpg",
     titulo: "Crio frecuencia facial",
     texto:
       "Produce un ‘shock térmico’, logrando un efecto lifting instantáneo en tu rostro.",
@@ -85,27 +85,27 @@ const trataFa: TarjetaProps[] = [
 ];
 const trataCo: TarjetaProps[] = [
   {
-    img: "src/assets/Velaslim.jpg",
+    img: "../assets/Velaslim.jpg",
     titulo: "VelaSlim",
     texto: "Reducción de la circunferencia corporal y la celulitis.",
     precio: 5000,
   },
   {
-    img: "src/assets/Dermohealth.jpg",
+    img: "../assets/Dermohealth.jpg",
     titulo: "DermoHealth",
     texto:
       "Moviliza tejidos y estimula la microcirculación, generando un drenaje linfático.",
     precio: 5000,
   },
   {
-    img: "src/assets/criofrecuencia-corporal.jpg",
+    img: "../assets/criofrecuencia-corporal.jpg",
     titulo: "Criofrecuencia",
     texto:
       "Produce un efecto de lifting instantáneo, tonificando y rejuveneciendo la piel.",
     precio: 5000,
   },
   {
-    img: "src/assets/Ultracavitacion.jpg",
+    img: "../assets/Ultracavitacion.jpg",
     titulo: "Ultracavitación",
     texto:
       "Técnica reductora que combate la grasa localizada, esculpiendo tu figura.",

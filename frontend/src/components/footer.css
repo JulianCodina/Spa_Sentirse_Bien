@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--footer);
-  padding: 50px;
+  padding: 50px 0px;
   display: flex;
   justify-content: space-around;
   position: absolute;
@@ -11,19 +11,30 @@
 }
 .contact {
   display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
+  justify-content: center;
+  gap: 50px 0;
   width: 100%;
   align-items: baseline;
-  justify-content: center;
+  margin: auto;
 }
 .contactInfo {
-  max-width: 300px;
+  width: 40%;
+  min-width: 252px;
 }
 .contact .par {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px 15px;
+  justify-content: center;
+  width: 80%;
+}
+.contact .par2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px 15px;
+  justify-content: space-evenly;
+  width: 260px;
+  margin-right: 5%;
 }
 .contact h3 {
   color: var(--blanco);
@@ -31,8 +42,13 @@
   margin-top: 0px;
   margin-bottom: 30px;
 }
+.itemEmpleo {
+  width: 40%;
+  min-width: 252px;
+  display: flex;
+  flex-direction: column;
+}
 .itemEmpleo h3 {
-  margin-top: 50px;
   margin-bottom: 20px;
 }
 .itemEmpleo a {
@@ -40,6 +56,24 @@
   text-align: left;
   text-decoration: underline;
   font-weight: normal;
+  margin-bottom: 5px;
+}
+.itemEmpleo button {
+  padding: 6px;
+  background-color: var(--gris);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--blanco);
+  transition: transform 0.3s ease; /* Transición suave */
+  opacity: 65%;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid var(--blanco);
+  width: 130px;
+}
+.itemEmpleo button:hover {
+  opacity: 100%;
 }
 .contact .item {
   margin-bottom: 15px;
@@ -89,26 +123,37 @@
 
 #map {
   display: flex;
-  width: 350px;
-  max-width: 200px;
+  min-width: 40%;
+  height: 205px;
   aspect-ratio: 1;
   border: 2px solid #f7f7f7;
   border-radius: 18px;
   margin-top: 10px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 976px) {
   #map {
-    margin: auto;
+    width: 95%;
+    height: 250px;
   }
 }
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 690px) {
+  .footer .contact {
+    flex-wrap: wrap;
+  }
+  .footer .par {
+    width: 90%;
+  }
   .footer {
     display: grid;
     gap: 20px;
   }
   .footer .itemEmpleo a {
     font-size: 15px;
+  }
+  #map {
+    margin-left: 0px;
   }
 }
 @media screen and (max-width: 330px) {

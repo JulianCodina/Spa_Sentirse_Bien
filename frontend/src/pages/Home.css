@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  background-image: url("src/assets/Fondo1.jpg");
+  background-image: url("../assets/Fondo1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,22 +64,20 @@
 }
 
 .first .buttonsFirst {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
-  gap: 10%;
+  margin: 50px auto;
+  gap: 40px 5%;
+  min-width: 320px;
+  flex-wrap: wrap;
 }
-.first .buttonsFirst button {
+.first .buttonsFirst button,
+.first .buttonsFirst a {
   width: 150px;
   padding: 15px 5px;
   font-size: 15px;
-}
-.first .buttonsFirst a {
   align-content: center;
-  width: 140px;
   text-align: center;
-  padding: 15px 5px;
-  font-size: 15px;
 }
 
 .about {
@@ -98,7 +96,7 @@
   margin: auto -60px;
   display: block;
   padding: 30px 30px 40px;
-  background-color: var(--blanco);
+  background-color: var(--header);
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   height: auto;
@@ -182,17 +180,14 @@
   .about .text h1 {
     font-size: 30px;
   }
-  #map {
-    margin: auto;
-  }
 }
 @media screen and (max-width: 620px) {
   .about .text p {
     margin: 0 5px 40px;
-    font-size: 13px;
+    font-size: 11px;
   }
   .about .text h1 {
-    font-size: 29px;
+    font-size: 25px;
   }
   .about .text {
     padding: 20px 15px 40px;
@@ -204,6 +199,7 @@
     margin-left: 0;
     position: static;
     object-fit: contain;
+    width: 350px;
   }
   .top .container {
     display: flex;
@@ -215,9 +211,12 @@
     padding: 0px 13px 5px;
     font-size: 13px;
   }
-  .footer {
-    display: grid;
-    gap: 20px;
+  .comments-section {
+    margin: 30px 0px 150px;
+  }
+  .comments-container {
+    max-width: 100%;
+    border-radius: 0px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -231,8 +230,9 @@
     margin-top: 8px;
     font-size: 50px;
   }
-  .first .buttonsFirst button {
-    width: 130px;
+  .first .buttonsFirst button,
+  .first .buttonsFirst a {
+    width: 30%;
     padding: 10px 5px;
     font-size: 12px;
   }
@@ -245,16 +245,10 @@
   }
 }
 @media screen and (max-width: 330px) {
-  .first .SecondButton,
-  .first .MainButton {
+  .first .buttonsFirst button,
+  .first .buttonsFirst a {
     width: 100px;
     padding: 10px 0;
-    font-size: 13px;
-  }
-  .contact h3 {
-    font-size: 15px;
-  }
-  .contact p {
     font-size: 13px;
   }
 }

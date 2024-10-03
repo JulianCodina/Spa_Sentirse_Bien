@@ -19,7 +19,7 @@ const perfil: Perfil = {
   reservas: 3,
 };
 
-const defaultImage = "src/assets/perfil.jpg";
+const defaultImage = "../assets/perfil.jpg";
 
 export default function Perfil() {
   useLayoutEffect(() => {

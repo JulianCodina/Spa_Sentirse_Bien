@@ -12,7 +12,7 @@ declare global {
 const GoogleMap = () => {
     useEffect(() => {
         const initMap = () => {
-            const location = { lat: -27.449911149532912, lng: -58.97721869777109 };
+            const location = { lat: -27.451122108555772, lng: -58.97900497057584 };
             const map = new window.google.maps.Map(document.getElementById("map") as HTMLElement, {
                 zoom: 16,
                 center: location,

@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { usePopUp } from "../components/PopUpContext";
 import "./FormPopUp.css";
 import emailjs from "@emailjs/browser";
+import swal from "sweetalert";
 
-export function FormPopUp() {
+interface FormPopUpProps {
+  tipo: number;
+}
+
+export function FormPopUp({ tipo }: FormPopUpProps) {
   // Estado inicial para el formulario
   const frmContact = {
     user_name: "",
@@ -41,7 +46,7 @@ export function FormPopUp() {
           setContact(frmContact);
 
           // Mostrar alerta de éxito
-          alert("Correo enviado exitosamente.");
+          Alerta();
         },
         (err) => {
           console.log("Error", err);
@@ -63,12 +68,16 @@ export function FormPopUp() {
   // Si el popup no está activo, no renderiza el formulario
   if (activePopUp !== "form") return null;
 
+  function Alerta() {
+    swal("Consulta enviada", "", "success");
+  }
+
   return (
     <div className="form-component">
       <div className="popup-overlay">
         <div className="form-component-content">
           <div className="icon">
-            <img src="./src/assets/gmail2.png" alt="Gmail icon" />
+            <img src="../assets/gmail2.png" alt="Gmail icon" />
             <h1>ENVIANOS UN CORREO</h1>
           </div>
           <p>Completa el siguiente formulario para enviarnos tu consulta</p>
@@ -119,6 +128,11 @@ export function FormPopUp() {
                 name="message"
                 value={contact.message}
                 onChange={handleChange}
+                placeholder={
+                  tipo === 2
+                    ? "Por favor, ingresa el enlace a tu currículum (Canvas, Drive, u otra plataforma de tu preferencia)"
+                    : ""
+                }
                 required
               />
             </div>

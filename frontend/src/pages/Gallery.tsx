@@ -8,34 +8,34 @@ type Media = {
 };
 const news: Media[] = [
   {
-    img: "src/assets/noticia1.jpeg",
+    img: "../assets/noticia1.jpeg",
     titulo: "Titulo noticia 1",
     texto: "Prueba noticia 1",
   },
   {
-    img: "src/assets/noticia1.jpeg",
+    img: "../assets/noticia1.jpeg",
     titulo: "Titulo noticia 2",
     texto: "Prueba noticia 2",
   },
 ];
 const photos: Media[] = [
   {
-    img: "src/assets/masaje-antiestres.jpg",
+    img: "../assets/masaje-antiestres.jpg",
   },
   {
-    img: "src/assets/temp.png",
+    img: "../assets/temp.png",
   },
   {
-    img: "src/assets/Dermohealth.jpg",
+    img: "../assets/Dermohealth.jpg",
   },
   {
-    img: "src/assets/masaje-antiestres.jpg",
+    img: "../assets/masaje-antiestres.jpg",
   },
   {
-    img: "src/assets/temp.png",
+    img: "../assets/temp.png",
   },
   {
-    img: "src/assets/Dermohealth.jpg",
+    img: "../assets/Dermohealth.jpg",
   },
 ];
 

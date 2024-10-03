@@ -18,7 +18,7 @@
   color: var(--rosa);
 }
 .comments ul {
-  padding: 0 15px;
+  padding: 0px;
   margin: 0;
   overflow-y: auto;
   max-height: 310px;
@@ -68,14 +68,16 @@
   .comments h3 {
     margin-bottom: 30px;
   }
-  .comments .MainButton {
-    font-size: 11px;
-    padding: 5px;
+  .comments .MainButton,
+  .comments .replyButton {
+    font-size: 10px;
+    padding: 3px;
   }
   .comments .textbox {
     padding: 6px 10px;
   }
   .comments li {
     padding: 6px 12px;
+    font-size: 11px;
   }
 }
