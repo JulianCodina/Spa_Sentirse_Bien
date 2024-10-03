@@ -11,7 +11,7 @@ import bookingRoutes from './routes/booking.routes.js'
 const app = express()
 
 app.use(cors({
-    origin: 'https://spa--sentirse-bien.netlify.app/', 
+    origin: 'https://spa--sentirse-bien.netlify.app', 
     credentials: true,
 }))
 
