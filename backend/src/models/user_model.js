@@ -27,11 +27,12 @@ const userSchema = new Schema({
     sex: {
         type: Boolean,
     },
-    rol: {
+    role: {
         type: String,
-        required: true,
+        enum: ["usuario", "admin", "secretario", "profesional"],
         default: "user",
-    }
+    },
+
 
 },    {
     timestamps: true
