@@ -9,7 +9,7 @@ type Props = {
 
 function Header({ SetIsOpen, IsOpen }: Props) {
   // Simulando el estado de inicio de sesión
-  const isLoggedIn = true; // Cambia esto a true para simular que el usuario está logueado
+  const isLoggedIn = false; // Cambia esto a true para simular que el usuario está logueado
   const isAdmin = true; // Cambia esto a true para simular que el usuario es admin
 
   return (
@@ -37,19 +37,24 @@ function Header({ SetIsOpen, IsOpen }: Props) {
         <Link to="/">Inicio</Link>
         <Link to="/galeria">Galería</Link>
         <Link to="/servicios">Servicios</Link>
-        <Link to="/turnos">Turnos</Link>
 
         {/* Rendnerizado condicional */}
         {isLoggedIn ? (
           <>
+            <Link to="/turnos">Turnos</Link>
             <Link to="/perfil" className="SecondButton">
               Perfil
             </Link>
           </>
         ) : (
-          <Link to="/login" className="MainButton">
-            Ingresar
-          </Link>
+          <>
+            <Link to="/login" className="MainButton">
+              Ingresar
+            </Link>
+            <Link to="/registro" className="SecondButton">
+              Registrar
+            </Link>
+          </>
         )}
       </div>
     </header>
