@@ -1,6 +1,6 @@
 .form-component .popup-overlay {
   position: fixed;
-  top: 25px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegura que el overlay esté encima de otros elementos */
+  z-index: 10; /* Asegura que el overlay esté encima de otros elementos */
 }
 
 .form-component-content {
