@@ -52,31 +52,26 @@ export function TurnPopUp() {
             <hr />
             <h2>Reserva</h2>
             <div className="Contenedor-dropdowns">
-              <Box
-                titulo="Tipo de Tratamiento"
-                label="Seleccione Tratamiento"
-                options={[
-                  "Masajes",
-                  "Belleza",
-                  "Tratamientos Faciales",
-                  "Tratamientos Corporales",
-                ]}
-              />
-              <Box
-                titulo="Servicio"
-                label="Seleccione Servicio"
-                options={servicios}
-              />
-              <div className="box">
-                <h4>Fecha</h4>
-                <input
-                  type="date"
-                  name="fecha"
-                  id="fecha"
-                  placeholder="Ingresar Fecha"
+              <div className="par">
+                <Box
+                  titulo="Tipo de Tratamiento"
+                  label="Seleccione"
+                  options={["Masajes", "Belleza", "Faciales", "Corporales"]}
                 />
+                <Box titulo="Servicio" label="Seleccione" options={servicios} />
               </div>
-              <Box titulo="Hora" label="Seleccione Horario" options={horas} />
+              <div className="par">
+                <div className="box">
+                  <h4>Fecha</h4>
+                  <input
+                    type="date"
+                    name="fecha"
+                    id="fecha"
+                    placeholder="Ingresar Fecha"
+                  />
+                </div>
+                <Box titulo="Hora" label="Seleccione" options={horas} />
+              </div>
             </div>
             <div className="detalles">
               <h4>Información importante</h4>

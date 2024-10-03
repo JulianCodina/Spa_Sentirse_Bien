@@ -22,15 +22,17 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding: 0 20px;
+  align-content: center;
 }
 .tarjeta .titulo {
   margin: 20px 0 0;
   color: var(--rosa);
-  padding: 0 20px;
+  padding: 0px;
   letter-spacing: normal;
 }
 .tarjeta p {
-  padding: 10px 20px 0;
+  padding: 10px 0px 0;
   color: var(--gris);
   font-weight: normal;
 }
@@ -51,12 +53,14 @@
     width: 180px;
     padding: 0 0 15px;
   }
+  .tarjeta .titulo {
+    font-size: 15px;
+  }
   .tarjeta p {
-    padding: 5px 13px 0;
+    padding: 5px 0px 0;
     font-size: 13px;
   }
-  .tarjeta h4 {
-    padding: 0px 13px 5px;
+  .tarjeta .SecondButton {
     font-size: 13px;
   }
   .tarjeta img {
@@ -68,13 +72,16 @@
   .tarjeta {
     width: 150px;
   }
+  .tarjeta .titulo {
+    font-size: 12px;
+  }
   .tarjeta p {
-    padding: 5px 13px 0;
+    padding: 5px 0px 0;
     font-size: 11px;
   }
-  .tarjeta h4 {
-    padding: 5px 13px 0;
-    font-size: 13px;
+  .tarjeta .SecondButton {
+    padding: 5px 13px;
+    font-size: 12px;
   }
   .tarjeta img {
     min-height: 100px;
@@ -85,7 +92,10 @@
   .tarjeta {
     width: 130px;
   }
-  .tarjeta h4 {
+  .tarjeta .titulo {
+    font-size: 10px;
+  }
+  .tarjeta .SecondButton {
     font-size: 11px;
   }
 }

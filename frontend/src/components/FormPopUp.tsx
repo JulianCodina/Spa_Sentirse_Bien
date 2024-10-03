@@ -4,7 +4,11 @@ import "./FormPopUp.css";
 import emailjs from "@emailjs/browser";
 import swal from "sweetalert";
 
-export function FormPopUp() {
+interface FormPopUpProps {
+  tipo: number;
+}
+
+export function FormPopUp({ tipo }: FormPopUpProps) {
   // Estado inicial para el formulario
   const frmContact = {
     user_name: "",
@@ -124,6 +128,11 @@ export function FormPopUp() {
                 name="message"
                 value={contact.message}
                 onChange={handleChange}
+                placeholder={
+                  tipo === 2
+                    ? "Por favor, ingresa el enlace a tu currículum (Canvas, Drive, u otra plataforma de tu preferencia)"
+                    : ""
+                }
                 required
               />
             </div>

@@ -1,7 +1,7 @@
 aside {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px; /* Fuera de la pantalla */
   width: auto;
   height: 100%;
   background-color: var(--header);
@@ -13,16 +13,24 @@ aside {
   align-items: center;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.05);
   background-color: var(--header);
+  transition: left 0.3s ease; /* Transición suave */
 }
+
+aside.open {
+  left: 0; /* Vuelve a su posición original */
+}
+
 aside nav {
   width: 100%;
 }
+
 aside nav .contenedor {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
 }
+
 aside .item {
   padding: 10px;
   border: 2px solid var(--rosa-fuerte);
@@ -30,6 +38,7 @@ aside .item {
   border-radius: 10px;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.02);
 }
+
 aside .item:hover {
   background-color: var(--rosa-claro);
 }
@@ -42,6 +51,7 @@ aside .item:hover {
     font-size: 11px;
   }
 }
+
 @media screen and (max-width: 450px) {
   aside {
     padding: 80px 10px 0;

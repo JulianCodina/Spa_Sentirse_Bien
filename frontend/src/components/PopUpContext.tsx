@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
+//HACE POSIBLE TENER POPUPS EN LA PAGINA
+
 type PopUpContextType = {
   activePopUp: string | null;
   openPopUp: (popUpType: string) => void;

@@ -6,6 +6,7 @@ import { useLayoutEffect } from "react";
 import { TurnPopUp } from "../components/Turno";
 import { FormPopUp } from "../components/FormPopUp";
 import { usePopUp } from "../components/PopUpContext";
+import LoginModal from "../components/LoginModal";
 
 function Home() {
   useLayoutEffect(() => {
@@ -16,6 +17,7 @@ function Home() {
 
   // Simulando que el usuario es admin
   const isAdmin = true; // Cambia esto a false para simular que el usuario no es admin
+  const isLoggedIn = false; // Cambia esto a true para simular que el usuario está logueado
 
   return (
     <div className="Home-page">
@@ -31,7 +33,10 @@ function Home() {
               </h1>
             </div>
             <div className="buttonsFirst">
-              <button className="MainButton" onClick={() => openPopUp("turn")}>
+              <button
+                className="MainButton"
+                onClick={() => (isLoggedIn ? openPopUp("turn") : LoginModal())}
+              >
                 Agendar Turno
               </button>
               <button
@@ -50,7 +55,7 @@ function Home() {
             </div>
           </div>
           <TurnPopUp />
-          <FormPopUp />
+          <FormPopUp tipo={1} />
         </section>
         <section className="about">
           <img src="../assets/imagen1.jpg" alt="imagen1" />

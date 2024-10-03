@@ -19,46 +19,42 @@ export default function NavBar({ IsOpen }: Props) {
   return (
     <>
       {/* Renderizado condicional */}
-      {isAdmin && IsOpen && (
-        <>
-          <aside>
-            <nav>
-              <div className="contenedor">
-                {/* Este bloque se renderiza solo si AdminType === 1 */}
-                {AdminType === 1 && (
-                  <Link className="item" to="/clientes">
-                    Registro de Clientes
+      {isAdmin && (
+        <aside className={IsOpen ? "open" : ""}>
+          <nav>
+            <div className="contenedor">
+              {/* Este bloque se renderiza solo si AdminType === 1 */}
+              {AdminType === 1 && (
+                <Link className="item" to="/clientes">
+                  Registro de Clientes
+                </Link>
+              )}
+              {/* Si es Doctora (AdminType === 1), renderiza todos los botones */}
+              {(AdminType === 1 || AdminType === 2) && (
+                <>
+                  <Link className="item" to="/">
+                    Botón para Profesional
                   </Link>
-                )}
-                {/* Si es Doctora (AdminType === 1), renderiza todos los botones */}
-                {(AdminType === 1 || AdminType === 2) && (
-                  <>
-                    <Link className="item" to="/">
-                      Botón para Profesional
-                    </Link>
-                    <Link className="item" to="/">
-                      Botón para Profesional
-                    </Link>
-                  </>
-                )}
+                  <Link className="item" to="/">
+                    Botón para Profesional
+                  </Link>
+                </>
+              )}
 
-                {(AdminType === 1 || AdminType === 3) && (
-                  <>
-                    <Link className="item" to="/">
-                      Botón para Secretario
-                    </Link>
-                    <Link className="item" to="/">
-                      Botón para Secretario
-                    </Link>
-                  </>
-                )}
-              </div>
-            </nav>
-          </aside>
-        </>
+              {(AdminType === 1 || AdminType === 3) && (
+                <>
+                  <Link className="item" to="/">
+                    Botón para Secretario
+                  </Link>
+                  <Link className="item" to="/">
+                    Botón para Secretario
+                  </Link>
+                </>
+              )}
+            </div>
+          </nav>
+        </aside>
       )}
     </>
   );
-
 }
-
