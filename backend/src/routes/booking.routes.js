@@ -2,7 +2,7 @@ import {Router} from 'express'
 import { createBooking, deleteBooking, getPersonalBookings, getActiveBookings, getBookingsByDate, changeStatus } from '../controllers/booking.controller.js'
 import { authRequired } from '../middlewares/validateToken.js'
 import { validateSchema } from '../middlewares/validator.middleware.js'
-import { createBookingSchema } from '../Schemas/booking.schema.js'
+import { createBookingSchema } from '../schemas/booking.schema.js'
 
 const router = Router()
 
