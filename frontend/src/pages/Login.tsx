@@ -94,7 +94,7 @@ export function Register() {
   } = useForm();
   const { signup, isAuthenticated, errors: registerErrors } = useAuth();
 
-  const [passwordMatch, setPasswordMatch] = useState<boolean>(true);
+  const [/*passwordMatch*/, setPasswordMatch] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
