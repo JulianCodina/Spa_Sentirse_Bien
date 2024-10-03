@@ -159,6 +159,10 @@
     font-size: 14px;
     text-align: center;
   }
+  .admin-container .titulo h1 {
+    letter-spacing: 4px;
+    font-size: 30px;
+  }
   .Turnos-container .turno p {
     font-size: 12px;
   }
@@ -168,5 +172,12 @@
   .Turnos-container input {
     font-size: 11px;
     padding: 5px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .admin-container {
+    margin: 0px 0;
+    border-radius: 0px;
+    padding-top: 80px;
   }
 }

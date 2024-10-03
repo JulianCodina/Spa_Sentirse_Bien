@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Nav_Bar.css";
 import { useEffect } from "react";
 
@@ -7,6 +7,9 @@ type Props = {
 };
 
 export default function NavBar({ IsOpen }: Props) {
+  const location = useLocation();
+  const isOnSpecificPage = location.pathname === "/admin";
+
   // Simulando el estado de admin
   const isAdmin = true; // Cambia esto a true para simular que el usuario está logueado
   const AdminType = 1; // Cambia esto a 1 para doctora, 2 para profesional, 3 secretario
@@ -19,7 +22,7 @@ export default function NavBar({ IsOpen }: Props) {
   return (
     <>
       {/* Renderizado condicional */}
-      {isAdmin && (
+      {isAdmin && isOnSpecificPage && (
         <aside className={IsOpen ? "open" : ""}>
           <nav>
             <div className="contenedor">

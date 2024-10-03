@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <FormPopUp tipo={2} />
+      <FormPopUp />
     </div>
   );
 }

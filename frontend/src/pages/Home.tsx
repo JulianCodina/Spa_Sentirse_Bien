@@ -4,7 +4,6 @@ import Comments from "../components/comments";
 import Servicio from "../components/servicio";
 import { useLayoutEffect } from "react";
 import { TurnPopUp } from "../components/Turno";
-import { FormPopUp } from "../components/FormPopUp";
 import { usePopUp } from "../components/PopUpContext";
 import LoginModal from "../components/LoginModal";
 
@@ -55,7 +54,6 @@ function Home() {
             </div>
           </div>
           <TurnPopUp />
-          <FormPopUp tipo={1} />
         </section>
         <section className="about">
           <img src="../assets/imagen1.jpg" alt="imagen1" />

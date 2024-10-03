@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { Dispatch } from "react";
+import { useLocation } from "react-router-dom";
 
 type Props = {
   SetIsOpen: Dispatch<React.SetStateAction<boolean>>;
@@ -8,15 +9,17 @@ type Props = {
 };
 
 function Header({ SetIsOpen, IsOpen }: Props) {
+  const location = useLocation();
+  const isOnSpecificPage = location.pathname === "/admin";
+
   // Simulando el estado de inicio de sesión
   const isLoggedIn = false; // Cambia esto a true para simular que el usuario está logueado
-  const isAdmin = true; // Cambia esto a true para simular que el usuario es admin
 
   return (
     <header>
       <div className="marca">
         {/* Rendnerizado condicional */}
-        {isAdmin && (
+        {isOnSpecificPage && (
           <>
             <img
               onClick={() => SetIsOpen(!IsOpen)}

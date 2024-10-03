@@ -10,6 +10,7 @@ type PopUpContextType = {
 
 const PopUpContext = createContext<PopUpContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePopUp = () => {
   const context = useContext(PopUpContext);
   if (!context) {
