@@ -94,7 +94,7 @@ export function Register() {
   } = useForm();
   const { signup, isAuthenticated, errors: registerErrors } = useAuth();
 
-  const [/*passwordMatch*/, setPasswordMatch] = useState<boolean>(true);
+  const [passwordMatch, setPasswordMatch] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -165,7 +165,6 @@ export function Register() {
             />
             {errors.password && <p>Debe confirmar su contraseña</p>}
           </label>
-          <p className="MensajeError">* Correo ya en uso.</p>
           <button className="MainButton" type="submit">
             Registrarse
           </button>
