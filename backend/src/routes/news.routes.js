@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { createNews, deleteNews, updateNews, getNews} from '../controllers/news.controller.js'
 import {validateSchema} from '../middlewares/validator.middleware.js'
 import { authRequired } from '../middlewares/validateToken.js'
-import {createNewsSchema} from '../Schemas/news.schema.js'
+import {createNewsSchema} from '../schemas/news.schema.js'
 
 const router = Router()
 
