@@ -34,7 +34,8 @@ export function Register() {
         navigate("/");
       }
     }, [isAuthenticated, navigate]);
-  
+    
+  /*
     const onSubmit = handleSubmit(async (values) => {
       if (values.password === values.password2) {
         setPasswordMatch(true);
@@ -43,7 +44,28 @@ export function Register() {
         setPasswordMatch(false);
       }
     });
-  
+  */
+
+    const onSubmit = handleSubmit(async (values) => {
+      // Validación de coincidencia de contraseñas
+      if (values.password === values.password2) {
+        setPasswordMatch(true);
+        
+        // Convierte los valores a un formato adecuado para el backend
+        const userData = convertFieldValuesToUser(values);
+    
+        // Muestra en consola los valores antes de enviarlos al backend (debug)
+        console.log('Valores enviados al backend:', userData);
+        
+        // Envía los datos al backend
+        signup(userData);
+      } else {
+        setPasswordMatch(false);
+        // Opción para mostrar mensaje de error visualmente
+        console.error('Las contraseñas no coinciden');
+      }
+    });
+    
     return (
       <div className="ingreso">
         <div className="background-image" />
@@ -107,5 +129,4 @@ export function Register() {
     );
   }
 
-  
 export default Register

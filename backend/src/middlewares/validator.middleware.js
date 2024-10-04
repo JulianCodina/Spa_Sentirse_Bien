@@ -1,4 +1,6 @@
 export const validateSchema = (schema) => (req, res, next) => {
+    console.log('Datos recibidos del frontend:', req.body);  // Agrega este log para inspeccionar los datos
+
     try {
         schema.parse(req.body);
         next();
