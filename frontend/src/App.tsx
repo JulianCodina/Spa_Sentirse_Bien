@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Login, { Register } from "./pages/Login";
+import Login from "./pages/Login";
+import Registro from "./pages/Registro.tsx"
 import Header from "./components/Header.tsx";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
@@ -27,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Register />} />
+            <Route path="/registro" element={<Registro />} />
             <Route path="/galeria" element={<Gallery />} />
             <Route path="/servicios" element={<Services />} />
             <Route path="/turnos" element={<Turn />} />
