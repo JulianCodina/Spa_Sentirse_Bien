@@ -15,7 +15,7 @@ function convertFieldValuesToUser(fields: FieldValues): IUser {
     names: fields.names,
     surnames: fields.surnames,
     sex: fields.sex,
-    isAdmin: fields.isAdmind,
+    isAdmin: fields.isAdmin,
   };
 }
 
@@ -165,7 +165,7 @@ export function Register() {
             />
             {errors.password && <p>Debe confirmar su contraseña</p>}
           </label>
-          <p className="MensajeError">* Correo ya en uso.</p>
+          {/*<p className="MensajeError">* Correo ya en uso.</p> */}
           <button className="MainButton" type="submit">
             Registrarse
           </button>
