@@ -26,10 +26,11 @@ export const loginRequest = (user: IUser): Promise<UserResponse> =>
 export const verificarToken = (): Promise<VerificarTokenResponse> => 
   axios.get('/verify');
 
+// Función para registro con manejo de errores
 export const registerRequest = async (user: IUser): Promise<UserResponse | null> => {
   try {
-    const response = await axios.post('/register', user);
-    return response.data;
+    const response = await axios.post<UserResponse>('/register', user);
+    return response.data; // Aquí devolvemos solo los datos de la respuesta
   } catch (error: any) {
     console.error('Error en la solicitud de registro:', error.response?.data || error.message);
     return null;
