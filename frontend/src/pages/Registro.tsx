@@ -35,8 +35,11 @@ export function Register() {
       }
     }, [isAuthenticated, navigate]);
 
+
     const onSubmit = handleSubmit(async (values) => {
+      
       console.log("Datos enviados al backend: ", values);
+
       if (values.password === values.password2) {
         setPasswordMatch(true);
         signup(convertFieldValuesToUser(values));
@@ -44,7 +47,9 @@ export function Register() {
         setPasswordMatch(false);
       }
     });
+
     
+
     
     return (
       <div className="ingreso">
