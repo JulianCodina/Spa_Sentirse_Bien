@@ -11,10 +11,10 @@ function convertFieldValuesToUser(fields: FieldValues): IUser {
       email: fields.email || "",
       username: fields.username || "",
       password: fields.password || "",
-      names: fields.names,
-      surnames: fields.surnames,
-      sex: fields.sex,
-      role: fields.role,
+      names: fields.names || "",
+      surnames: fields.surnames || "",
+      sex: fields.sex || "",
+      role: fields.role || "",
     };
   }
 
@@ -35,8 +35,8 @@ export function Register() {
       }
     }, [isAuthenticated, navigate]);
 
-  /*
     const onSubmit = handleSubmit(async (values) => {
+      console.log("Datos enviados al backend: ", values);
       if (values.password === values.password2) {
         setPasswordMatch(true);
         signup(convertFieldValuesToUser(values));
@@ -44,27 +44,7 @@ export function Register() {
         setPasswordMatch(false);
       }
     });
-  */
-
-    const onSubmit = handleSubmit(async (values) => {
-  if (values.password === values.password2) {
-    setPasswordMatch(true);
     
-    // Filtrar los valores undefined antes de enviarlos
-    const filteredValues = Object.fromEntries(
-      Object.entries(values).filter(([/*key*/, value]) => value !== undefined && value !== "")
-    );
-
-    // Muestra en consola los valores filtrados antes de enviar al backend
-    console.log('Valores enviados al backend:', filteredValues);
-    
-    signup(convertFieldValuesToUser(filteredValues));
-  } else {
-    setPasswordMatch(false);
-    console.error('Las contraseñas no coinciden');
-  }
-});
-
     
     return (
       <div className="ingreso">
