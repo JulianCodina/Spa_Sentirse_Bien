@@ -17,11 +17,21 @@ interface VerificarTokenResponse {
 }
 
 // Funciones con tipos de retorno explícitos
-export const registerRequest = (user: IUser): Promise<UserResponse> => 
-  axios.post('/register', user);
+//export const registerRequest = (user: IUser): Promise<UserResponse> => 
+//  axios.post('/register', user);
 
 export const loginRequest = (user: IUser): Promise<UserResponse> => 
   axios.post('/login', user);
 
 export const verificarToken = (): Promise<VerificarTokenResponse> => 
   axios.get('/verify');
+
+export const registerRequest = async (user: IUser): Promise<UserResponse | null> => {
+  try {
+    const response = await axios.post('/register', user);
+    return response.data;
+  } catch (error: any) {
+    console.error('Error en la solicitud de registro:', error.response?.data || error.message);
+    return null;
+  }
+};
