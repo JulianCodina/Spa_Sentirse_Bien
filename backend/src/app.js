@@ -11,8 +11,13 @@ import pdfRoutes from './routes/pdf.routes.js'
 
 const app = express()
 
+// Definir el origen según el entorno
+const origin = process.env.NODE_ENV === 'production'
+    ? process.env.CORS_ORIGIN_PROD
+    : process.env.CORS_ORIGIN_LOCAL
+
 app.use(cors({
-    origin: 'https://spa-sentirse-bien.netlify.app', 
+    origin: origin,
     credentials: true,
 }))
 
