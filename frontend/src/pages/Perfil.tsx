@@ -117,7 +117,7 @@ export default function Perfil() {
                     className="textbox"
                     type="text"
                     name="text"
-                    placeholder="Número de Telefonno"
+                    placeholder="Número de Telefono"
                   />
                 </div>
                 <p className="MensajeError">* Correo ya en uso.</p>
