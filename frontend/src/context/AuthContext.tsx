@@ -46,26 +46,31 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       console.log(res.data);
       setUser(res.data.user);
       setIsAuthenticated(true);
-    } catch (error: any) {
-      console.log(error.response);
-      setErrors(error.response.data);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error.message);
+        setErrors([error.message]); // Manejo básico del error
+      } else {
+        setErrors(['Error desconocido']);
+      }
     }
   };
-
+  
   const signin = async (user: IUser) => {
     try {
       const res = await loginRequest(user);
       console.log(res);
       setUser(res.data.user);
       setIsAuthenticated(true);
-    } catch (error: any) {
-      if (Array.isArray(error.response.data)) {
-        return setErrors(error.response.data);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setErrors([error.message]);
+      } else {
+        setErrors(['Error desconocido']);
       }
-
-      setErrors([error.response.data.message]);
     }
   };
+  
 
   useEffect(() => {
     if (errors.length > 0) {
@@ -102,6 +107,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAuthenticated(false);
         setUser(null);
         setLoading(false);
+        console.log(error);
       }
     }
     checkLogin();

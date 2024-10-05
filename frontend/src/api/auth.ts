@@ -25,3 +25,5 @@ export const loginRequest = (user: IUser): Promise<UserResponse> =>
 
 export const verificarToken = (): Promise<VerificarTokenResponse> => 
   axios.get('/verify');
+
+
