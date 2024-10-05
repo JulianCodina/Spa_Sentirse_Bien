@@ -65,9 +65,11 @@
   cursor: pointer;
   font-size: 12px;
   color: white;
-  transition: transform 0.3s ease; /* Transición suave */
-  opacity: 85%;
+  opacity: 0.8;
   font-weight: bold;
+}
+.comments .replyButton:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 450px) {
