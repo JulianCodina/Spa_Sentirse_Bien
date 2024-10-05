@@ -49,7 +49,7 @@ const GoogleMap = () => {
 export default GoogleMap;
 */
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const DEFAULT_CENTER = { lat: -27.451122108555772, lng: -58.97900497057584 };
 const DEFAULT_ZOOM = 16;
