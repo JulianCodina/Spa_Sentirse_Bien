@@ -30,9 +30,11 @@ export default function Footer() {
               <p>@Sentirse.bien</p>
             </div>
           </div>
-          <GoogleMapsWrapper>
-            <GoogleMap/>
-          </GoogleMapsWrapper>
+          <div>
+            <GoogleMapsWrapper>
+              <GoogleMap />
+            </GoogleMapsWrapper>
+          </div>
         </div>
         <div className="par2">
           <div className="itemEmpleo">

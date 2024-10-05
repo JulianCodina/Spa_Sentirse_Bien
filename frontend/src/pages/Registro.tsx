@@ -31,6 +31,7 @@ export function Register() {
   const { signup, isAuthenticated, errors: registerErrors } = useAuth(); // Cambié errors por registerErrors para más claridad
   const [passwordMatch, setPasswordMatch] = useState<boolean>(true); // Habilité el uso de passwordMatch
   const [password2, setPassword2] = useState<string>(""); // Estado para manejar password2
+  const [selectedGender, setSelectedGender] = useState<string>(""); // Estado para el género
   const navigate = useNavigate();
 
   // Efecto que redirige si el usuario ya está autenticado
@@ -38,7 +39,7 @@ export function Register() {
     if (isAuthenticated) {
       navigate("/");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   // Función onSubmit que maneja el envío del formulario
   const onSubmit = handleSubmit(async (values) => {
@@ -46,9 +47,9 @@ export function Register() {
     if (values.password === password2) {
       // Comprobamos password y password2 aquí
       setPasswordMatch(true);
-      signup(convertFieldValuesToUser(values)); // Convertimos los valores relevantes a IUser, pero excluyendo password2
+      signup({ ...convertFieldValuesToUser(values), sex: selectedGender }); // Asegúrate de pasar el género seleccionado
     } else {
-      setPasswordMatch(false); // Si no coinciden, actualizamos el estado para mostrar el mensaje de error
+      setPasswordMatch(false);
     }
   });
 
@@ -111,6 +112,7 @@ export function Register() {
               <Dropdown
                 label={"Genero"}
                 options={["Mujer", "Hombre", "Otro"]}
+                onChange={(selectedOption) => setSelectedGender(selectedOption)}
               />
             </label>
             {errors.phone && (
