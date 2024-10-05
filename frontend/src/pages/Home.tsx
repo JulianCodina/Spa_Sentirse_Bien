@@ -7,6 +7,28 @@ import { TurnPopUp } from "../components/Turno";
 import { usePopUp } from "../components/PopUpContext";
 import LoginModal from "../components/LoginModal";
 
+const servicios = [
+  {
+    img: "../assets/masaje-antiestres.jpg",
+    titulo: "Masajes Antiestrés",
+    texto: "Relaja cuerpo y mente, aliviando tensión muscular y estrés.",
+    precio: 5000,
+  },
+  {
+    img: "../assets/Limpieza.jpg",
+    titulo: "Limpieza profunda + Hidratación",
+    texto: "Limpia y rehidrata la piel, dejándola fresca y luminosa.",
+    precio: 5000,
+  },
+  {
+    img: "../assets/Velaslim.jpg",
+    titulo: "VelaSlim",
+    texto:
+      "Eliminación de la grasa en zonas como abdomen, cintura, muslos, brazos y glúteos.",
+    precio: 5000,
+  },
+];
+
 function Home() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -76,25 +98,15 @@ function Home() {
           <h4 className="tituloh1">NUESTRO TOP</h4>
           <h2 className="tituloh2">Los Servicios Más Populares</h2>
           <div className="container">
-            <Servicio
-              img="../assets/masaje-antiestres.jpg"
-              titulo="Masajes Antiestrés"
-              texto="Relaja cuerpo y mente, aliviando tensión muscular y estrés."
-              precio={5000}
-            />
-            <Servicio
-              img="../assets/Limpieza.jpg"
-              titulo="Limpieza profunda + Hidratación"
-              texto="Limpia y rehidrata la piel, dejándola fresca y luminosa."
-              precio={5000}
-            />
-            <Servicio
-              img="../assets/Velaslim.jpg"
-              titulo="VelaSlim"
-              texto="Eliminación de la grasa en zonas como abdomen, cintura,
-                  muslos, brazos y glúteos."
-              precio={5000}
-            />
+            {servicios.map((servicio, index) => (
+              <Servicio
+                key={index} // Agregar una key única para cada elemento
+                img={servicio.img}
+                titulo={servicio.titulo}
+                texto={servicio.texto}
+                precio={servicio.precio}
+              />
+            ))}
           </div>
           <div className="button">
             <Link to="/servicios" className="MainButton">
@@ -103,11 +115,9 @@ function Home() {
           </div>
         </section>
         <section className="comments-section" id="comments">
-          <hr />
           <div className="comments-container">
             <Comments />
           </div>
-          <hr />
         </section>
       </main>
     </div>
