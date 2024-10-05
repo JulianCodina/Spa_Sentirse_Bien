@@ -1,0 +1,31 @@
+.informe-page .background-image {
+  background-image: url("../assets/Fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.informe-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  padding: 50px 40px 55px;
+  margin: 90px 0 100px;
+  background-color: var(--contenedor);
+  border-radius: 30px;
+}
+.informe-container .titulo h1 {
+  letter-spacing: 5px;
+}
+.informe-container hr {
+  color: var(--rosa);
+  border-style: solid;
+  margin: 20px 0 0;
+}

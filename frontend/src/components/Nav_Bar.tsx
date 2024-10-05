@@ -35,10 +35,10 @@ export default function NavBar({ IsOpen }: Props) {
               {/* Si es Doctora (AdminType === 1), renderiza todos los botones */}
               {(AdminType === 1 || AdminType === 2) && (
                 <>
-                  <Link className="item" to="/">
+                  <Link className="item" to="/informeVacio">
                     Botón para Profesional
                   </Link>
-                  <Link className="item" to="/">
+                  <Link className="item" to="/informeVacio">
                     Botón para Profesional
                   </Link>
                 </>
@@ -46,10 +46,10 @@ export default function NavBar({ IsOpen }: Props) {
 
               {(AdminType === 1 || AdminType === 3) && (
                 <>
-                  <Link className="item" to="/">
+                  <Link className="item" to="/informeVacio">
                     Botón para Secretario
                   </Link>
-                  <Link className="item" to="/">
+                  <Link className="item" to="/informeVacio">
                     Botón para Secretario
                   </Link>
                 </>

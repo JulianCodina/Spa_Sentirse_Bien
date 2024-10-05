@@ -19,8 +19,8 @@
   justify-content: left;
   width: 80vw;
   max-width: 1200px; /* Máximo ancho para pantallas grandes */
-  padding: 50px 40px 40px;
-  margin: 130px 0 100px;
+  padding: 50px 40px 55px;
+  margin: 90px 0 100px;
   background-color: var(--contenedor);
   border-radius: 30px;
 }
