@@ -4,9 +4,10 @@ import "./Dropdown.css";
 type Props = {
   label: string;
   options: string[];
+  onChange?: (selectedOption: string) => void; // Esto está bien
 };
 
-export default function Dropdown({ label, options }: Props) {
+export default function Dropdown({ label, options, onChange }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLabel, setSelectedLabel] = useState(label);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -28,6 +29,7 @@ export default function Dropdown({ label, options }: Props) {
   const handleOptionClick = (option: string) => {
     setSelectedLabel(option);
     setIsOpen(false);
+    if (onChange) onChange(option);
   };
 
   useEffect(() => {
