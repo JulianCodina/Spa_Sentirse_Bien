@@ -25,7 +25,7 @@ type Props = {
   titulo: string;
   label: string;
   options: string[];
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void; // Agregado para el manejo del cambio
+  onChange?: (value: string) => void;
 };
 function Box(props: Props) {
   const { titulo, label, options, onChange } = props; // Asegúrate de incluir onChange aquí
