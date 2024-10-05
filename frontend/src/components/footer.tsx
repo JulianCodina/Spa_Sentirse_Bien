@@ -1,5 +1,6 @@
 import "./footer.css";
 import GoogleMap from "./googleMap";
+import GoogleMapsWrapper from "./GoogleMapsWrapper";
 import { usePopUp } from "./PopUpContext";
 import { FormPopUp } from "./FormPopUp";
 
@@ -29,7 +30,9 @@ export default function Footer() {
               <p>@Sentirse.bien</p>
             </div>
           </div>
-          <GoogleMap />
+          <GoogleMapsWrapper>
+            <GoogleMap/>
+          </GoogleMapsWrapper>
         </div>
         <div className="par2">
           <div className="itemEmpleo">
