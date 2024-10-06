@@ -1,8 +1,13 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.NODE_ENV === "production"
+    ? import.meta.env.BACK_URL_PROD
+    : import.meta.env.BACK_URL_LOCAL;
+
+// Definir baseURL dinámicamente según el entorno
 const instance = axios.create({
-  baseURL: "http://localhost:3000/api",
-  //baseURL: 'https://spa-sentirse-bien-ogte.onrender.com/api',
+  baseURL: baseURL,
   withCredentials: true,
 });
 
