@@ -18,8 +18,6 @@ const origin =
     : process.env.CORS_ORIGIN_LOCAL;
 
 console.log("Frontend URL:", origin);
-console.log("Variables de entorno: ");
-console.log(process.env);
 
 app.use(
   cors({
