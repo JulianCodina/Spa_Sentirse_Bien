@@ -17,6 +17,8 @@ const origin =
     ? process.env.CORS_ORIGIN_PROD
     : process.env.CORS_ORIGIN_LOCAL;
 
+console.log("CORS Origin:", origin);
+
 app.use(
   cors({
     origin: origin,
