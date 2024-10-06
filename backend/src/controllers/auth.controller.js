@@ -11,6 +11,8 @@ const TOKEN_SECRET = process.env.TOKEN_SECRET;
 export const register = async (req, res) => {
     const {email, password, username} = req.body
     
+    console.log("Datos recibidos: ", req.body); // muestra los datos que mando el frontend
+
     try {
 
         const userFoundByEmail = await User.findOne ({email})
@@ -44,6 +46,7 @@ export const register = async (req, res) => {
         })
     }
     catch (error) {
+        console.error("Error en el registro:", error);
         res.status(500).json({message: error.message});
     }
 };
@@ -74,6 +77,7 @@ export const login = async (req, res) => {
         });
     }
     catch (error) {
+        console.error("Error en el registro:", error);
         res.status(500).json({message: error.message});
     }
 };
