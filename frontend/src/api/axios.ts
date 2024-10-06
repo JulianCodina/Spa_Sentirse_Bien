@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL =
-  import.meta.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? import.meta.env.VITE_BACK_URL_PROD
     : import.meta.env.VITE_BACK_URL_LOCAL;
 
