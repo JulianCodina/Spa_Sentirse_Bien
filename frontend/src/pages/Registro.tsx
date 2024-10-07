@@ -1,3 +1,4 @@
+import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.tsx";
 import IUser from "../types/IUser.ts";
@@ -107,5 +108,5 @@ export function Register() {
     );
   }
 
-  
+
 export default Register
