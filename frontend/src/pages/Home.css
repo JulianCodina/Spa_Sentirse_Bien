@@ -167,12 +167,17 @@
   margin: auto;
   background-color: var(--blanco);
   border-radius: 25px;
-  padding: 40px 30px;
+  padding: 30px 30px 25px;
   box-shadow: 3px 3px 20px 1px rgba(0, 0, 0, 0.1);
   max-width: 70%;
 }
 
 @media screen and (max-width: 760px) {
+  .top .button .MainButton {
+    font-size: 13px;
+    padding: 7px;
+    width: 70px;
+  }
   .about .text p {
     margin: 0 20px 40px;
     font-size: 13px;
@@ -217,6 +222,7 @@
   .comments-container {
     max-width: 100%;
     border-radius: 0px;
+    padding: 40px 15px;
   }
 }
 @media screen and (max-width: 450px) {

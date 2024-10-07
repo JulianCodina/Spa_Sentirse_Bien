@@ -1,5 +1,6 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./comments.css";
+import swal from "sweetalert";
 
 // Simulamos un usuario logueado o no logueado con una constante
 const loggedInUser: string | null = "Juan Pérez"; // Cambiar a `null` si no está logueado
@@ -18,11 +19,39 @@ type Comment = {
   };
 };
 
+const initialComments: Array<Comment> = [
+  {
+    name: "Carlos López",
+    text: "¡Este es un comentario interesante!",
+    date: "01/10/2024",
+    reply: {
+      name: "Ana Gómez",
+      text: "Gracias, Carlos. Estoy de acuerdo.",
+      date: "02/10/2024",
+    },
+  },
+  {
+    name: "Marta Pérez",
+    text: "No me gustó mucho este tema.",
+    date: "03/10/2024",
+  },
+  {
+    name: "Luis Rodríguez",
+    text: "Me encanta lo que están haciendo.",
+    date: "04/10/2024",
+  },
+];
+
 export default function Comments() {
   const [text, setText] = useState("");
   const [comments, setComments] = useState<Array<Comment>>([]);
   const [replyText, setReplyText] = useState(""); // Estado para la respuesta
   const [replyIndex, setReplyIndex] = useState<number | null>(null); // Para saber qué comentario se está respondiendo
+
+  // Cargar comentarios simulados al montar el componente
+  useEffect(() => {
+    setComments(initialComments);
+  }, []);
 
   // Maneja el envío de un nuevo comentario
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -69,6 +98,25 @@ export default function Comments() {
       setReplyText(""); // Limpiar el campo de respuesta
       setReplyIndex(null); // Cerrar el campo de respuesta
     }
+  }
+
+  // Maneja la eliminación de un comentario
+  function handleDeleteComment(index: number) {
+    swal({
+      title: "¿Estás seguro?",
+      text: "Una vez eliminado, no podrás recuperar este comentario.",
+      icon: "warning",
+      buttons: ["Cancelar", "Eliminar"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        const updatedComments = comments.filter((_, i) => i !== index);
+        setComments(updatedComments);
+        swal("Comentario eliminado con éxito", {
+          icon: "success",
+        });
+      }
+    });
   }
 
   return (
@@ -131,7 +179,14 @@ export default function Comments() {
               </>
             )}
             {/* Botón de borrar siempre visible */}
-            {isAdmin && <button className="delete">Borrar</button>}
+            {isAdmin && (
+              <button
+                className="delete"
+                onClick={() => handleDeleteComment(index)}
+              >
+                Borrar
+              </button>
+            )}
           </li>
         ))}
       </ul>

@@ -8,6 +8,7 @@ import Turn from "./pages/Turns";
 import Perfil from "./pages/Perfil";
 import Admin from "./pages/Admin.tsx";
 import Clientes from "./pages/Clientes.tsx";
+import Informe from "./pages/Informes.tsx";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/admin" element={<Admin />} />
 
         <Route path="/clientes" element={<Clientes />} />
+        <Route path="/informeVacio" element={<Informe />} />
       </Routes>
     </Router>
   );

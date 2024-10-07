@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Registro from "./pages/Registro.tsx"
+import Registro from "./pages/Registro.tsx";
 import Header from "./components/Header.tsx";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
@@ -15,6 +15,7 @@ import ProtectedRoute from "./ProtectedRoutes.tsx";
 import NavBar from "./components/Nav_Bar.tsx";
 import { useState } from "react";
 import Clientes from "./pages/Clientes.tsx";
+import Informe from "./pages/Informes.tsx";
 
 function App() {
   const [IsOpen, SetIsOpen] = useState(false);
@@ -36,6 +37,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
 
             <Route path="/clientes" element={<Clientes />} />
+            <Route path="/informeVacio" element={<Informe />} />
 
             <Route element={<ProtectedRoute />}></Route>
           </Routes>

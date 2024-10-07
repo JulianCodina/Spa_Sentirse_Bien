@@ -13,6 +13,7 @@ function convertFieldValuesToUser(fields: FieldValues): IUser {
       username: fields.username || "",
       password: fields.password || "",
       names: fields.names,
+      phone: fields.phone  ||"",
       surnames: fields.surnames,
       sex: fields.sex,
       role: fields.role,

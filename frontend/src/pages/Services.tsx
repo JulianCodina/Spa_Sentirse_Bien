@@ -157,7 +157,7 @@ function Services() {
           <ServiceSection titulo="Tratamientos Corporales" tarjetas={trataCo} />
         </div>
       </div>
-      <TurnPopUp /> {/* Aquí solo se renderiza una vez */}
+      <TurnPopUp />
     </div>
   );
 }

@@ -100,7 +100,7 @@ export default function Gallery() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>
-              &times;
+              ⨉
             </span>
             <img src={selectedImage} alt="Modal" className="modal-image" />
           </div>
