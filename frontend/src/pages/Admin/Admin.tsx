@@ -1,13 +1,34 @@
-import { ChangeEvent, useLayoutEffect, useState } from "react";
-import Dropdown from "../components/Dropdown";
+import { useEffect, useLayoutEffect, useState } from "react";
+import Dropdown from "../../components/Dropdown";
 import "./Admin.css";
+import NewsSection from "./Noticias";
+import PhotosSection from "./Fotos";
 
-const servicios: string[] = [
-  "Antiestres",
-  "Descontracturantes",
-  "Con piedras calientes",
-  "Circulatorios",
-];
+type Servicio = {
+  nombre: string;
+  precio: number;
+};
+
+type Servicios = {
+  [key: string]: Servicio[];
+};
+
+const servicios: Servicios = {
+  Masajes: [
+    { nombre: "Antiestres", precio: 5000 },
+    { nombre: "Descontracturantes", precio: 6000 },
+    { nombre: "Con piedras calientes", precio: 7000 },
+    { nombre: "Circulatorios", precio: 5500 },
+  ],
+  Belleza: [
+    { nombre: "Corte de cabello", precio: 2000 },
+    { nombre: "Manicura", precio: 1500 },
+  ],
+  Faciales: [
+    { nombre: "Limpieza facial", precio: 3000 },
+    { nombre: "Tratamiento antiarrugas", precio: 4500 },
+  ],
+};
 const horas: string[] = [
   "09:00",
   "10:00",
@@ -18,19 +39,13 @@ const horas: string[] = [
   "19:00",
   "20:00",
 ];
-const tipos: string[] = [
-  "Masaje",
-  "Belleza",
-  "Tratamientos Faciales",
-  "Tratamientos Corporales",
-];
 
 type Media = {
   img: string;
   titulo?: string;
   texto?: string;
 };
-const news: Media[] = [
+const newsArray: Media[] = [
   {
     img: "../assets/noticia1.jpeg",
     titulo: "Titulo noticia 1",
@@ -49,7 +64,7 @@ const news: Media[] = [
       "Prueba noticia 2 Prueba noticia 2 Prueba noticia 2 Prueba noticia 2 Prueba noticia 2",
   },
 ];
-const photos: Media[] = [
+const photosArray: Media[] = [
   {
     img: "../assets/masaje-antiestres.jpg",
   },
@@ -120,17 +135,45 @@ export default function Admin() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [titulo, setTitulo] = useState("");
-  const [text, setText] = useState("");
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    const { name, value } = event.target;
+  const [precio, setPrecio] = useState<number>(0);
+  const [news, setNews] = useState<Array<Media>>([]);
+  const [photos, setPhotos] = useState<Array<Media>>([]);
 
-    if (name === "titulo") {
-      setTitulo(value);
-    } else if (name === "text") {
-      setText(value);
+  // Cargar comentarios simulados al montar el componente
+  useEffect(() => {
+    setNews(newsArray);
+    setPhotos(photosArray);
+  }, []);
+
+  // Estado para almacenar los datos de los servicios
+  const [Data, setData] = useState({
+    tipoTratamiento: "",
+    servicio: "",
+  });
+
+  const handleChangeOptions = (name: string, value: string) => {
+    setData((prev) => {
+      const newData = { ...prev, [name]: value };
+
+      // Si se cambia el tipo de tratamiento, reinicia el servicio seleccionado y el precio
+      if (name === "tipoTratamiento") {
+        newData.servicio = ""; // Reinicia el servicio
+        setPrecio(0); // Reinicia el precio
+      }
+      return newData;
+    });
+    // Si se cambia el servicio, actualiza el precio
+    if (name === "servicio") {
+      const selectedService = servicios[Data.tipoTratamiento]?.find(
+        (serv) => serv.nombre === value
+      );
+      if (selectedService) {
+        setPrecio(selectedService.precio);
+      } else {
+        setPrecio(0);
+      }
     }
-  }
+  };
 
   return (
     <div className="admin-page">
@@ -141,98 +184,38 @@ export default function Admin() {
           <hr />
         </div>
         <div className="admin-types">
-          <div className="gallery-section">
-            <h3>Noticias</h3>
-            <div className="element-container">
-              {news.map((element, index) => (
-                <div className="element" key={index}>
-                  <div>
-                    <img src={element.img} />
-                    <div className="text"></div>
-                    <h4>{element.titulo}</h4>
-                    <p>{element.texto}</p>
-                  </div>
-                  <button className="delete">Borrar</button>
-                </div>
-              ))}
-            </div>
-            <div className="buttons">
-              <div className="par">
-                <input
-                  className="textbox"
-                  name="titulo"
-                  type="text"
-                  value={titulo}
-                  onChange={handleChange}
-                  placeholder="Título"
-                />
-                <input
-                  className="textbox"
-                  name="text"
-                  type="text"
-                  value={text}
-                  onChange={handleChange}
-                  placeholder="Descripción"
-                />
-              </div>
-              <div className="par">
-                <div className="file">
-                  <label htmlFor="file-upload" className="SecondButton">
-                    Subir imagen
-                  </label>
-                  <input
-                    id="file-upload"
-                    type="file"
-                    style={{ display: "none" }}
-                  />
-                </div>
-                <input className="MainButton" type="submit" value="Guardar" />
-              </div>
-            </div>
-          </div>
-          <div className="gallery-section">
-            <h3>Fotos</h3>
-            <div className="element-container">
-              {photos.map((element, index) => (
-                <div className="element-photo">
-                  <div className="element-img" key={index}>
-                    <img src={element.img} />
-                  </div>
-                  <button className="delete">Borrar</button>
-                </div>
-              ))}
-            </div>
-            <div className="buttons">
-              <div className="file">
-                <label htmlFor="file-upload" className="SecondButton">
-                  Seleccionar imagen
-                </label>
-                <input
-                  id="file-upload"
-                  type="file"
-                  style={{ display: "none" }}
-                />
-              </div>
-              <input className="MainButton" type="submit" value="Guardar" />
-            </div>
-          </div>
+          <NewsSection news={news} setNews={setNews} />
+          <PhotosSection photos={photos} setPhotos={setPhotos} />
+
           <div className="services-section">
             <h3>Servicios</h3>
             <div className="buttons">
               <div className="par">
                 <Dropdown
                   label="Tipo"
-                  options={[
-                    "Masajes",
-                    "Belleza",
-                    "Tratamientos Faciales",
-                    "Tratamientos Corporales",
-                  ]}
+                  options={Object.keys(servicios)}
+                  onChange={(selectedOption) =>
+                    handleChangeOptions("tipoTratamiento", selectedOption)
+                  }
                 />
-                <Dropdown label="Servicio" options={servicios} />
+                <Dropdown
+                  label="Servicio"
+                  options={
+                    servicios[Data.tipoTratamiento]?.map(
+                      (servicio) => servicio.nombre
+                    ) || []
+                  } // Muestra los servicios del tipo de tratamiento seleccionado
+                  onChange={(selectedOption) =>
+                    handleChangeOptions("servicio", selectedOption)
+                  }
+                />
               </div>
               <div className="par">
-                <input type="text" className="textbox" placeholder="precio" />
+                <input
+                  type="text"
+                  className="textbox"
+                  placeholder={precio.toString()}
+                />
                 <input type="submit" className="MainButton" value="Guardar" />
               </div>
             </div>
@@ -259,7 +242,14 @@ export default function Admin() {
             <div className="buttons">
               <div className="par">
                 <input type="date" />
-                <Dropdown label="Tipo" options={tipos} />
+                <Dropdown
+                  label="Tipo"
+                  options={
+                    servicios[Data.tipoTratamiento]?.map(
+                      (servicio) => servicio.nombre
+                    ) || []
+                  } // Muestra los servicios del tipo de tratamiento seleccionado
+                />
               </div>
             </div>
             <div className="Turnos-container">

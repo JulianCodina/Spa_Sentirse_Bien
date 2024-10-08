@@ -38,7 +38,7 @@ function Home() {
 
   // Simulando que el usuario es admin
   const isAdmin = true; // Cambia esto a false para simular que el usuario no es admin
-  const isLoggedIn = false; // Cambia esto a true para simular que el usuario está logueado
+  const isLoggedIn = true; // Cambia esto a true para simular que el usuario está logueado
 
   return (
     <div className="Home-page">
