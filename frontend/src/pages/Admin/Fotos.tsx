@@ -103,7 +103,13 @@ const PhotosSection: React.FC<PhotosSectionProps> = ({ photos, setPhotos }) => {
           </div>
         ))}
       </div>
-      <form className="buttons" onSubmit={() => handleSubmitPhoto}>
+      <form
+        className="buttons"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmitPhoto();
+        }}
+      >
         <div className="file">
           <label htmlFor="file-upload-photo" className="SecondButton">
             Subir imagen
@@ -117,12 +123,13 @@ const PhotosSection: React.FC<PhotosSectionProps> = ({ photos, setPhotos }) => {
           />
         </div>
         <input className="MainButton" type="submit" value="Guardar" />
-        {imagePreviewPhoto && (
-          <div className="image-preview">
-            <img src={imagePreviewPhoto} alt="Vista previa" />
-          </div>
-        )}
       </form>
+      {imagePreviewPhoto && (
+        <div className="image-preview">
+          <p>Vista previa:</p>
+          <img src={imagePreviewPhoto} alt="Vista previa" />
+        </div>
+      )}
 
       {/* Modal */}
       {selectedImage && (

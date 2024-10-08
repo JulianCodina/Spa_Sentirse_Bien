@@ -3,6 +3,7 @@ import Dropdown from "../../components/Dropdown";
 import "./Admin.css";
 import NewsSection from "./Noticias";
 import PhotosSection from "./Fotos";
+import ServicesSection from "./Servicios";
 
 type Servicio = {
   nombre: string;
@@ -135,45 +136,23 @@ export default function Admin() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [precio, setPrecio] = useState<number>(0);
   const [news, setNews] = useState<Array<Media>>([]);
   const [photos, setPhotos] = useState<Array<Media>>([]);
+
+  const [precio, setPrecio] = useState<number>(0);
+  const [services, setServices] = useState<Servicios>(servicios);
 
   // Cargar comentarios simulados al montar el componente
   useEffect(() => {
     setNews(newsArray);
     setPhotos(photosArray);
+    setServices(servicios);
   }, []);
 
-  // Estado para almacenar los datos de los servicios
   const [Data, setData] = useState({
     tipoTratamiento: "",
     servicio: "",
   });
-
-  const handleChangeOptions = (name: string, value: string) => {
-    setData((prev) => {
-      const newData = { ...prev, [name]: value };
-
-      // Si se cambia el tipo de tratamiento, reinicia el servicio seleccionado y el precio
-      if (name === "tipoTratamiento") {
-        newData.servicio = ""; // Reinicia el servicio
-        setPrecio(0); // Reinicia el precio
-      }
-      return newData;
-    });
-    // Si se cambia el servicio, actualiza el precio
-    if (name === "servicio") {
-      const selectedService = servicios[Data.tipoTratamiento]?.find(
-        (serv) => serv.nombre === value
-      );
-      if (selectedService) {
-        setPrecio(selectedService.precio);
-      } else {
-        setPrecio(0);
-      }
-    }
-  };
 
   return (
     <div className="admin-page">
@@ -186,40 +165,15 @@ export default function Admin() {
         <div className="admin-types">
           <NewsSection news={news} setNews={setNews} />
           <PhotosSection photos={photos} setPhotos={setPhotos} />
+          <ServicesSection
+            services={services}
+            setServices={setServices}
+            precio={precio}
+            setPrecio={setPrecio}
+            Data={Data}
+            setData={setData}
+          />
 
-          <div className="services-section">
-            <h3>Servicios</h3>
-            <div className="buttons">
-              <div className="par">
-                <Dropdown
-                  label="Tipo"
-                  options={Object.keys(servicios)}
-                  onChange={(selectedOption) =>
-                    handleChangeOptions("tipoTratamiento", selectedOption)
-                  }
-                />
-                <Dropdown
-                  label="Servicio"
-                  options={
-                    servicios[Data.tipoTratamiento]?.map(
-                      (servicio) => servicio.nombre
-                    ) || []
-                  } // Muestra los servicios del tipo de tratamiento seleccionado
-                  onChange={(selectedOption) =>
-                    handleChangeOptions("servicio", selectedOption)
-                  }
-                />
-              </div>
-              <div className="par">
-                <input
-                  type="text"
-                  className="textbox"
-                  placeholder={precio.toString()}
-                />
-                <input type="submit" className="MainButton" value="Guardar" />
-              </div>
-            </div>
-          </div>
           <div className="hours-section">
             <h3>Horarios</h3>
             <div className="buttons">

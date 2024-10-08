@@ -148,12 +148,13 @@ const NewsSection: React.FC<NewsSectionProps> = ({ news, setNews }) => {
           </div>
           <input className="MainButton" type="submit" value="Guardar" />
         </div>
-        {imagePreviewNew && (
-          <div className="image-preview">
-            <img src={imagePreviewNew} alt="Vista previa" />
-          </div>
-        )}
       </form>
+      {imagePreviewNew && (
+        <div className="image-preview">
+          <p>Vista previa:</p>
+          <img src={imagePreviewNew} alt="Vista previa" />
+        </div>
+      )}
     </div>
   );
 };
