@@ -114,6 +114,7 @@ export default function Comments() {
         setComments(updatedComments);
         swal("Comentario eliminado con éxito", {
           icon: "success",
+          timer: 1500,
         });
       }
     });
