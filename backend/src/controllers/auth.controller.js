@@ -9,7 +9,7 @@ dotenv.config();
 const TOKEN_SECRET = process.env.TOKEN_SECRET;
 
 export const register = async (req, res) => {
-    const {email, password, username} = req.body
+    const {email, password, username, phone, sex} = req.body
     
     console.log("Datos recibidos: ", req.body); // muestra los datos que mando el frontend
 
@@ -30,6 +30,9 @@ export const register = async (req, res) => {
         const newUser = new User({
             username,
             email,
+            phone,
+            sex,
+            role: "usuario",
             password: passwordHash
         })
     
